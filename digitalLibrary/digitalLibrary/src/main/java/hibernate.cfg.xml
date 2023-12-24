@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- DB configuration -->
+		<property name="connection.Driver = class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/library</property>
+		<property name="connection.user">root</property>
+		<property name="connection.password">Lakshmi@2002</property>
+		
+		<!-- Dialect Congiguration -->
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		
+		<!--
+			create -> if table is not exists,it will create , if exists then it will drop the table and
+						it creates new table
+			update -> if table is not there, it will create table, if exists then it will 
+						update the table
+												-->		
+		<property name="hbm2ddl.auto">update</property>
+<!--		<property name="show_sql">true</property> -->
+		<property name="format_sql">true</property>
+		
+		<!-- Mapping Configuration -->
+		<mapping class ="DigitalLibraryManagement.digitalLibrary.students"/>
+		<mapping class ="DigitalLibraryManagement.digitalLibrary.bookDetails"/>
+		<mapping class ="DigitalLibraryManagement.digitalLibrary.issue"/>
+		
+	
+	</session-factory>
+</hibernate-configuration>
